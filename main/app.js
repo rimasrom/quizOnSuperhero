@@ -44,6 +44,24 @@ const questions = [
     }
 ]
 
+const quiz = (question,answer)=>{
+    const userAnswer = readlineSync.question(question)
+    if(userAnswer.toUpperCase()===answer.toUpperCase()){
+        console.log("you are right")
+        score = score + 1;
+        console.log(`your score is : ${score}`)
+    }else{
+        console.log("you are wrong")
+        console.log(`your score is : ${score}`)
+    }
+    console.log("____________________")
+}
 
+const play = () =>{
+    for(i=0;i<questions.length;i++){
+    const currentQuestion = questions[i]
+    quiz(currentQuestion.question,currentQuestion.answer)
+    }
+}
 
-
+play();
